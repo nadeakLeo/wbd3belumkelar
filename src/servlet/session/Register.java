@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Type;
+import java.net.InetAddress;
 import java.util.Map;
 
 @WebServlet(name = "Register")
@@ -36,7 +37,16 @@ public class Register extends HttpServlet {
             is_driver = "0";
         }
 
-        String data = String.format("name=%s&uname=%s&email=%s&pass=%s&phnum=%s&isdriver=%s", name, username, email, password, phone, isDriver ? "true" : "false");
+        String ip = request.getRemoteAddr();
+        if (ip.equalsIgnoreCase("0:0:0:0:0:0:0:1")) {
+            InetAddress inet = InetAddress.getLocalHost();
+            ip = inet.getHostAddress();
+        }
+
+        String userAgent = request.getHeader("User-Agent");
+
+        String data = String.format("name=%s&uname=%s&email=%s&pass=%s&phnum=%s&isdriver=%s&ua=%s&ip=%s",
+                name, username, email, password, phone, isDriver ? "true" : "false", userAgent, ip);
         out.println(data);
 
         String reply = RequestSender.sendRequest("http://localhost:8084/registerservice", "POST", "application/x-www-form-urlencoded", data);

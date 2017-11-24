@@ -27,8 +27,10 @@ public class RegisterService extends HttpServlet {
         String password = request.getParameter("pass");
         String phone = request.getParameter("phnum");
         boolean isDriver = request.getParameter("isdriver").equals("true");
-
-
+        String ip = request.getParameter("ip");
+        String userAgent = request.getParameter("ua");
+        userAgent = userAgent.replaceAll("\\s+", "");
+        userAgent = userAgent.replaceAll(";", "");
 
         // create connection to the database
         Connection databaseConnection = DatabaseConnector.connect("pr-ojek-identity");
@@ -39,6 +41,7 @@ public class RegisterService extends HttpServlet {
         try {
             String expiryTime = new TokenGenerator().generateExpiryTime();
             String token = new TokenGenerator().generateToken(username ,expiryTime);
+            token += "#" + userAgent + "#" + ip;
 
             String command = "insert into user (uname, email, password, access_token, expiry_time) VALUES(?,?,?,?,?)";
             preparedStatement = databaseConnection.prepareStatement(command);

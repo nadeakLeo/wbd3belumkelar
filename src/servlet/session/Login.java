@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Type;
+import java.net.InetAddress;
 import java.util.Map;
 
 @WebServlet(name = "Login")
@@ -24,10 +25,18 @@ public class Login extends HttpServlet {
         // get the username and password from POST method
         String username = request.getParameter("uname");
         String password = request.getParameter("pass");
+        String ip = request.getRemoteAddr();
+        if (ip.equalsIgnoreCase("0:0:0:0:0:0:0:1")) {
+            InetAddress inet = InetAddress.getLocalHost();
+            ip = inet.getHostAddress();
+        }
 
-        String data = String.format("uname=%s&pass=%s", username, password);
+        String userAgent = request.getHeader("User-Agent");
 
-        String reply = RequestSender.sendRequest("http://localhost:8084/loginservice", "POST", "application/x-www-form-urlencoded", data);
+        String data = String.format("uname=%s&pass=%s&ua=%s&ip=%s", username, password, userAgent, ip);
+
+        String reply = RequestSender.sendRequest("http://localhost:8084/loginservice",
+                "POST", "application/x-www-form-urlencoded", data);
 
         if (reply != "") {
             Gson gson = new Gson();
