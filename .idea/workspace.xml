@@ -6,26 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62b240c-b202-4206-8114-006ffc9a15c4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/REST/identityservice/RegisterService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/REST/identityservice/TokenRenewer.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/REST_war_exploded2/WEB-INF/classes/identityservice/LoginService.class" afterPath="$PROJECT_DIR$/out/artifacts/REST_war_exploded2/WEB-INF/classes/identityservice/LoginService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/session/Login$1.class" afterPath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/session/Login$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/session/Login.class" afterPath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/session/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/session/SignIn.class" afterPath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/session/SignIn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/REST/identityservice/LoginService.class" afterPath="$PROJECT_DIR$/out/production/REST/identityservice/LoginService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/Login$1.class" afterPath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/Login$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/Login.class" afterPath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/Register$1.class" afterPath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/Register$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/Register.class" afterPath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/Register.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/SignIn.class" afterPath="$PROJECT_DIR$/out/production/WBDRAss/servlet/session/SignIn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/REST/src/identityservice/LoginService.java" afterPath="$PROJECT_DIR$/REST/src/identityservice/LoginService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/REST/src/identityservice/RegisterService.java" afterPath="$PROJECT_DIR$/REST/src/identityservice/RegisterService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/session/Login.java" afterPath="$PROJECT_DIR$/src/servlet/session/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/session/Register.java" afterPath="$PROJECT_DIR$/src/servlet/session/Register.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/session/SignIn.java" afterPath="$PROJECT_DIR$/src/servlet/session/SignIn.java" />
-    </list>
+    <list default="true" id="b62b240c-b202-4206-8114-006ffc9a15c4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,8 +70,8 @@
       <file leaf-file-name="TokenRenewer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/REST/src/identityservice/TokenRenewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+            <state relative-caret-position="236">
+              <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1511527541759" expanded="true" signature="1021:1075" ph="UPDATE user " />
@@ -663,16 +644,15 @@
       <workItem from="1510069622324" duration="2778000" />
       <workItem from="1511421671776" duration="2104000" />
       <workItem from="1511427808498" duration="179000" />
-      <workItem from="1511519769414" duration="7143000" />
+      <workItem from="1511519769414" duration="7457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22480000" />
+    <option name="totallyTimeSpent" value="22794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1105,8 +1085,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/REST/src/identityservice/TokenRenewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        <state relative-caret-position="236">
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1511527541759" expanded="true" signature="1021:1075" ph="UPDATE user " />
