@@ -7,7 +7,7 @@
 <body>
 <div class = "header">
   <div class="title">
-     <div class="bigfont"> 
+     <div class="bigfont">
         <label class= "headcolor1">PR</label><label>-</label><label class="headcolor2">OJEK</label>
      </div>
      <div>
@@ -113,9 +113,9 @@
   }
 
   var app = angular.module('chatting', []);
-  app.controller('chatCtrl', function($scope, $timeout){
+  app.controller('chatCtrl', function($scope, $timeout, $http){
     $scope.messages = [];
-    
+
     $scope.submitChat = function() {
       if ($scope.textSent != "" && $scope.textSent != null && $scope.textSent != undefined) {
         $scope.messages.push({sentAs: 'sender', content: $scope.textSent});
@@ -124,6 +124,16 @@
           element.scrollTop = element.scrollHeight;
         }, 0, false);
       }
+
+      // HTTP POST REQUEST
+      $http({
+        method : "POST",
+        url : "http://127.0.0.1:3000/send"
+      }).then(function mySuccess(response) {
+        console.log("success!");
+      }, function myError(response) {
+        console.log("error!");
+      });
     }
     $scope.receiveChat = function() {
       if ($scope.textSent != "" && $scope.textSent != null && $scope.textSent != undefined) {
@@ -139,4 +149,4 @@
 </script>
 
 </body>
-</html> 
+</html>
