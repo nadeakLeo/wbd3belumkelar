@@ -25,6 +25,7 @@ public class SignIn extends HttpServlet {
             else if (request.getParameter("error").equals("notoken"))
                 errorMessage = "You haven't login, please input your username and password to login";
         }
+        System.out.println(errorMessage);
         request.setAttribute("errormessage", errorMessage);
         request.getRequestDispatcher("/login.jsp").forward(request, response);
     }

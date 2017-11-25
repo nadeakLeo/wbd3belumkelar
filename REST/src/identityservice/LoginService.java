@@ -21,6 +21,10 @@ public class LoginService extends HttpServlet {
         response.setContentType("application/json");
         String username = request.getParameter("uname");
         String password = request.getParameter("pass");
+        String ip = request.getParameter("ip");
+        String userAgent = request.getParameter("ua");
+        userAgent = userAgent.replaceAll("\\s+", "");
+        userAgent = userAgent.replaceAll(";", "");
 
         // create connection to the database
         Connection databaseConnection = DatabaseConnector.connect("pr-ojek-identity");
@@ -42,11 +46,11 @@ public class LoginService extends HttpServlet {
             PrintWriter out = response.getWriter();
 
             if (result.next()) {
-                // TODO :add token
+                // TODO :add IP and User Agent
                 String expiryTime = new TokenGenerator().generateExpiryTime();
                 String userId = result.getString("user_id");
                 String token = new TokenGenerator().generateToken(username, expiryTime);
-
+                token += "#" + userAgent + "#" + ip;
                 // insert token and expiry time to database
                 String insertQuery = "update user set access_token = ?, expiry_time = ? where user_id = ?";
                 PreparedStatement preparedStatement1 = databaseConnection.prepareStatement(insertQuery);
