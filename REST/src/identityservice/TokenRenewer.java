@@ -17,6 +17,15 @@ public class TokenRenewer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
         String token = request.getParameter("token");
+        String ip = request.getParameter("ip");
+        String[] temp = token.split("#");
+        boolean isSameIP = ip.equals(temp[2]);
+
+        if (!isSameIP) {
+            System.out.println("Not a same user. Check your security");
+            response.sendRedirect("http://localhost:8085/signin?error=differenttoken");
+        }
+
         String newExpiryTime = new TokenGenerator().generateExpiryTime();
 
         // create connection to the database
