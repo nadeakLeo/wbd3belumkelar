@@ -6,7 +6,7 @@ var request = require('request');
 
 var key = 'AIzaSyDMn5W8Vk4dGewT4P_2sFnIIxiggpsfFJM';
 var firebaseUrl = 'https://fcm.googleapis.com/fcm/send';
-var messageData = {
+/*var messageData = {
     "notification": {
       "title": "hai!",
       "body": "body",
@@ -16,7 +16,7 @@ var messageData = {
       "person": "Maizono",
     },
     "to": "cIGQhBnoD4U:APA91bFeDZNrCavASOLGzDq7uI9UNCUs6S1KeP3XdszFsgxyjHa9NS0nsE4vKXYJTwavMt8OYCe5fkVL9i9zIlZ8KqSOncgB3Qr8EfLNrYrbqnb6DmJLz-m-bRSPU8DoK-SOE7brkRyq"
-};
+};*/
 
 
 /* POST CHAT */
@@ -24,16 +24,43 @@ router.post('/', function(req, res, next) {
 
     console.log('POST REQUEST send');
 
-    var idFrom = 100;
-    var idTo = 200;
-    var message = "hahaha";
+    var idFrom = req.body.from;
+    var idTo = req.body.to;
+    var message = req.body.message;
+    var tokenDest = req.body.tokenDest;
 
-    var chat = querystring.stringify({
+    console.log(tokenDest);
+
+    var messageData = {
+        "notification": {
+            "title": "Chat Masuk!",
+            "body": message,
+        },
+        "data": {
+            "fromPerson": idFrom,
+            "toPerson": idTo,
+            "message": message,
+            "tokenDest": tokenDest
+        },
+        "to": tokenDest
+    };
+
+    /*var messageData = {
+        "data": {
+            "fromPerson": idFrom,
+            "toPerson": idTo,
+            "message": message,
+            "tokenDest": tokenDest
+        },
+        "to": "cIGQhBnoD4U:APA91bFeDZNrCavASOLGzDq7uI9UNCUs6S1KeP3XdszFsgxyjHa9NS0nsE4vKXYJTwavMt8OYCe5fkVL9i9zIlZ8KqSOncgB3Qr8EfLNrYrbqnb6DmJLz-m-bRSPU8DoK-SOE7brkRyq"
+    };*/
+
+    /*var chat = querystring.stringify({
         from: idFrom,
         to: idTo,
         dateTime: Date.now(),
         message: message
-    });
+    });*/
 
     /*request({
         headers: {
