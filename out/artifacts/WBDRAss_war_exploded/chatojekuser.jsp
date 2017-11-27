@@ -3,10 +3,6 @@
     <title>Make A Order</title>
     <link rel="stylesheet" type="text/css" href="makeorder.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <script src="./firebase.js"></script>
 </head>
 <body>
 <div class = "header">
@@ -71,7 +67,7 @@
 
       </div>
 
-      <div id="chatter" ng-app="chatting" ng-controller="chatCtrl" ng-init="temp=1">
+      <div ng-app="chatting" ng-controller="chatCtrl">
         <div class="chatoutput" id="scrollable">
           <div ng-repeat="message in messages">
             <span class="{{ message.sentAs }}">{{ message.content }}</span>
@@ -98,7 +94,6 @@
 </div>
 
 <script>
-
   function validateForm() {
       var x = document.forms["pickdest"]["pickpoint"].value;
       var y = document.forms["pickdest"]["dest"].value;
@@ -118,19 +113,8 @@
   }
 
   var app = angular.module('chatting', []);
-  app.controller('chatCtrl', function($scope, $timeout, $http, $location){
-
-    console.log($location.search());
-
+  app.controller('chatCtrl', function($scope, $timeout, $http){
     $scope.messages = [];
-    var fromId = 100;
-    var toId = 200;
-    var tokenDest = "";
-
-    tokenDest = "eT8dZ_4aL1Y:APA91bEZhzMxMEldfC-2N_cpR598SyBbliD8XsxmEoADBdKpuYTE16x2MSV4yk2Njg0P98qf_LB8drfLKFP9iiGKiQ9CIYQD62BeFHBOPvqGJj3RL_wlP6XkYfddCvfEoCx5g1f3c8w9";
-
-    console.log("tokenDest");
-    console.log(tokenDest);
 
     $scope.submitChat = function() {
       if ($scope.textSent != "" && $scope.textSent != null && $scope.textSent != undefined) {
@@ -141,48 +125,19 @@
         }, 0, false);
       }
 
-      var dataRawChat = {
-        from: fromId,
-        to: toId,
-        tokenDest: tokenDest,
-        message: $scope.textSent,
-        date: Date.now().toString(),
-      };
-
-      var dataChat = JSON.stringify(dataRawChat);
-
-      // HTTP POST REQUEST MENAMBAHKAN CHAT KE DATABASE
-        $http({
-            method : "POST",
-            url : "http://127.0.0.1:3000/chat",
-            data: dataChat
-        }).then(function mySuccess(response) {
-            console.log("success!");
-            console.log("Respon: "+response.body);
-        }, function myError(response) {
-            console.log("error!");
-            console.log("Header: "+JSON.stringify(response.headers));
-        });
-
-      // HTTP POST REQUEST MENGIRIM CHAT
+      // HTTP POST REQUEST
       $http({
         method : "POST",
-        url : "http://127.0.0.1:3000/send",
-        data: dataChat
-        }).then(function mySuccess(response) {
+        url : "http://127.0.0.1:3000/send"
+      }).then(function mySuccess(response) {
         console.log("success!");
       }, function myError(response) {
         console.log("error!");
-        console.log("Header: "+JSON.stringify(response.headers));
       });
     }
     $scope.receiveChat = function() {
       if ($scope.textSent != "" && $scope.textSent != null && $scope.textSent != undefined) {
-          console.log("tes!");
         $scope.messages.push({sentAs: 'receiver', content: $scope.textReceived});
-          tokenDest = "cIGQhBnoD4U:APA91bFeDZNrCavASOLGzDq7uI9UNCUs6S1KeP3XdszFsgxyjHa9NS0nsE4vKXYJTwavMt8OYCe5fkVL9i9zIlZ8KqSOncgB3Qr8EfLNrYrbqnb6DmJLz-m-bRSPU8DoK-SOE7brkRyq";
-          console.log("tokenDest");
-          console.log(tokenDest);
         $timeout(function() {
           var element = document.getElementById("scrollable");
           element.scrollTop = element.scrollHeight;

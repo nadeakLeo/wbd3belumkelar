@@ -176,3 +176,5 @@ Asisten IF3110 2016
 Ade | Johan | Kristianto | Micky | Michael | Rangga | Raudi | Robert | Sashi
 
 Dosen : Yudistira Dwi Wardhana | Riza Satria Perdana | Muhammad Zuhri Catur Candra
+
+Mahasiswa : Leo Lambarita Nadeak | Muthmainnah | Muhammad Treza Nolandra | Mohammad Dicky Andika Putra
