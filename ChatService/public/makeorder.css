@@ -1,0 +1,351 @@
+body {
+    width: 40%;
+    height: 90%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    padding: 0;
+}
+
+/* Style the tab */
+div.tab {
+    width:100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #FFFFFF;
+
+}
+.steplabeltab {
+    overflow: hidden;
+    border: none;
+    background-color: #FFFFFF;
+    margin: 0px 0px 20px 0px;
+}
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    width:  33.33%;
+    float: left;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    padding: 13px 4px;
+    transition: 0.3s;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab .active {
+    background-color: #465d43 ;
+    color: white;
+}
+
+/* Style the tab content */
+.content {
+    padding: 6px 0px;
+    border-top: none;
+
+}
+
+/* Style the close button */
+.topright {
+    float: right;
+    font-size: 20px;
+}
+.floatright {
+    float: right;
+}
+.pickdestform  .submit {
+    margin: auto;
+    width: 20%;
+    display: block;
+    background-color:
+            #82d800;
+    color: #363636;
+    padding: 14px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    clear: both;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 60px;
+
+}
+.topright:hover {color: red;}
+/* Full-width inputs */
+.pickdestform input[type=text]{
+    width: 60%;
+    padding: 4px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    clear: both;
+    position: relative;
+    float:right;
+    font-size: 18px;
+}
+
+.formlabel{
+    width: 30%;
+    padding: 0px 0px;
+    margin: 8px 0px 8px 18px;
+    display: inline-block;
+    font-size: 20px
+}
+.steplabel{
+    background-color: inherit;
+    width:  18%;
+    float: left;
+    border: 1px solid black;
+    outline: none;
+    margin: 8px 33px 8px 0px;
+    padding: 5px 5px;
+    font-size: 17px;
+
+}
+.steplabelopen{
+    background-color: #fffe9f;
+    width:  18%;
+    float: left;
+    border: 1px solid black;
+    outline: none;
+    margin: 8px 33px 8px 0px;
+    padding: 5px 5px;
+    font-size: 17px;
+}
+.steplabelright{
+    background-color: inherit;
+    width:  18%;
+    float: left;
+    border: 1px solid black;
+    outline: none;
+    margin: 8px 0px 8px 0px;
+    padding: 5px 5px;
+    font-size: 17px;
+}
+.steplabelnumber{
+    background-color: #d9d9d9;
+    width:  10%;
+    float:left;
+    margin: 2px;
+    border-radius: 100px;
+    text-align: center;
+    padding: 5px 9px;
+    font-size: 15px;
+}
+.steplabeltext{
+    width:  65%;
+    float: right;
+    text-align: left;
+    font-size: 15px;
+}
+.title{
+    width: 50%;
+    float: left;
+
+}
+.logininfo{
+    width: 50%;
+    float: right;
+}
+.bigfont{
+    font-size: 30px;
+    font-weight: bold;
+}
+.wushwush{
+    font-size: 15px;
+    color: green;
+}
+.headcolor1{
+    color:green;
+}
+.headcolor2{
+    color:red;
+}
+.header{
+    width: 100%;
+}
+.makeorder {
+    font-size: 40px;
+    font-weight: bold;
+}
+.box{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0px 0px 8px 0px;
+}
+.boxlabel{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.profile_picture {
+    width:100px;
+    height:100px;
+    border: 1px solid black;
+    margin: 0px 15px 0px 30px;
+    float: left;
+    overflow: auto;
+}
+.drivername {
+    margin-top: 0px;
+    margin-left: 5px;
+    font-size: 22px;
+    width: 60%;
+    float:left;
+    color: #333333;
+    font-weight: bold;
+
+}
+.driverinfo {
+    margin-left: 5px;
+    font-size: 17px;
+    float:left;
+    color: #333333;
+    font-weight: bold;
+
+}
+.rating {
+    color:
+            #fe9926;
+}
+.choosedriver .submit{
+    background-color:
+            #82d800;
+    color: #363636;
+    padding: 8px 18px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+
+    font-size: 12px;
+    float: right;
+    cursor: pointer;
+    margin: 40px 20px 15px 0px;
+
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.emptybox{
+    font-size: 25px;
+    padding: 20px 30px;
+    text-align: center;
+    color: #d9d9d9;
+}
+.howwasit{
+    font-size: 22px;
+    font-weight: bold;
+    width: 100%;
+}
+.center{
+    width: 106px;
+    margin: auto;
+}
+.circle_picture {
+    width:100px;
+    height:100px;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+.uname{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    margin: auto;
+}
+.fullname{
+    font-size:22px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+.chatoutput{
+    border: 1px solid black;
+    height: 250px;
+    overflow-y: auto;
+}
+.chatinput{
+    border: 1px solid black;
+    padding: 10px 0;
+}
+.close{
+    margin: auto;
+    width: 20%;
+    display: block;
+    background-color: #f9461d;
+    color: #ffffff;
+    padding: 14px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    clear: both;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.inputarea{
+    width: 65%;
+    margin: 0 20px;
+    display: inline-block;
+}
+.inputarea input{
+    width: 100%;
+    border: none;
+}
+.send{
+    width: 25%;
+    display: inline-block;
+    margin: auto 0;
+}
+.sendbutton{
+    margin: auto;
+    width: 90%;
+    display: block;
+    padding: 5px 0;
+    background-color: #259b37;
+    color: #000000;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    clear: both;
+}
+.sender{
+    margin: 10px;
+    display: block;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    clear: both;
+    float: right;
+    text-align: left;
+    background-color: #56a3ea;
+}
+.receiver{
+    margin: 10px;
+    display: block;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    clear: both;
+    float: left;
+    text-align: left;
+    background-color: #caced1;
+}
+.chatinput form{
+    margin: 0;
+}

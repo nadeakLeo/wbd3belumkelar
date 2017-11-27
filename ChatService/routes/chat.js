@@ -3,28 +3,23 @@ var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
-var url = 'mongodb://localhost:27017/ojek_chat';
-
-var insertChat = function(db, callback) {
-    db.collection('chat').insertOne( {
-        "from" : 1,
-        "to" : 2,
-        "dateTime" : Date.now(),
-        "message" : "test 1 2 3..."
-    }, function(err, result) {
-        assert.equal(err, null);
-        console.log("Inserted a chat to history.");
-        callback();
-    });
-};
+var link = 'mongodb://localhost:27017/ojek_chat';
 
 /* GET CHAT */
-router.get('/', function(req, res, next) {
+router.get('/:sender/:receiver', function(req, res, next) {
 
-    // AMBIL CHAT DARI MONGODB
-    MongoClient.connect(url, function(err, db) {
-        assert.equal(null, err);
-        insertChat(db, function() {
+    MongoClient.connect(link, function(err, db) {
+        if (err) throw err;
+        var sender = parseInt(req.params.sender);
+        var receiver = parseInt(req.params.receiver);
+        //console.log(sender);
+        //console.log(receiver);
+        var query = { $or: [ {"from":sender, "to":receiver}, {"from":receiver, "to":sender} ] };
+        //console.log(query);
+        db.collection('chat').find(query).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result);
+            res.end(JSON.stringify(result));
             db.close();
         });
     });
@@ -32,6 +27,37 @@ router.get('/', function(req, res, next) {
 
 /* POST CHAT */
 router.post('/', function(req, res, next) {
+
+    console.log("request POST chat");
+
+    var idFrom = 100;
+    var idTo = 200;
+    var message = "hahaha";
+    var error = 0;
+
+    var insertChat = function(db, callback) {
+        db.collection('chat').insertOne( {
+            "from" : idFrom,
+            "to" : idTo,
+            "dateTime" : Date.now(),
+            "message" : message
+        }, function(err, result) {
+            assert.equal(err, null);
+            error = 1;
+            //console.log("Inserted a chat to history.");
+            callback();
+        });
+    };
+
+    // AMBIL CHAT DARI MONGODB
+    MongoClient.connect(link, function(err, db) {
+        assert.equal(null, err);
+        insertChat(db, function() {
+            db.close();
+        });
+    });
+
+    if (error !== 1) res.send("Chat inserted!");
 
     // MENAMBAHKAN DATA CHAT KE DATABASE MONGODB
 });
