@@ -45,8 +45,12 @@
                 <div class="step-number flex-center">2</div>
                 <div class="step-text">Select a Driver</div>
             </div>
-            <div class="step-field flex-center current-step">
+            <div class="step-field flex-center">
                 <div class="step-number flex-center">3</div>
+                <div class="step-text">Chat driver</div>
+            </div>
+            <div class="step-field flex-center">
+                <div class="step-number flex-center">4</div>
                 <div class="step-text">Complete your order</div>
             </div>
         </div>
