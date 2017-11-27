@@ -136,7 +136,20 @@
 
       var arsip = JSON.stringify(daftar);
 
-      // HTTP POST REQUEST
+      // HTTP POST REQUEST MENAMBAHKAN CHAT KE DATABASE
+        $http({
+            method : "POST",
+            url : "http://127.0.0.1:3000/chat",
+            data: arsip
+        }).then(function mySuccess(response) {
+            console.log("success!");
+            console.log("Respon: "+response.body);
+        }, function myError(response) {
+            console.log("error!");
+            console.log("Header: "+JSON.stringify(response.headers));
+        });
+
+      // HTTP POST REQUEST MENGIRIM CHAT
       $http({
         method : "POST",
         url : "http://127.0.0.1:3000/send",
@@ -145,6 +158,7 @@
         console.log("success!");
       }, function myError(response) {
         console.log("error!");
+        console.log("Header: "+JSON.stringify(response.headers));
       });
     }
     $scope.receiveChat = function() {

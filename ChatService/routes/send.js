@@ -24,6 +24,30 @@ router.post('/', function(req, res, next) {
 
     console.log('POST REQUEST send');
 
+    var idFrom = 100;
+    var idTo = 200;
+    var message = "hahaha";
+
+    var chat = querystring.stringify({
+        from: idFrom,
+        to: idTo,
+        dateTime: Date.now(),
+        message: message
+    });
+
+    /*request({
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        uri: 'http://127.0.0.1:3000/chat',
+        method: 'POST'
+    }, function (err, response, body) {
+        //res.send("berhasil!");
+        console.log("Respon: "+response.body);
+    });*/
+
+    //request.write(chat);
+
     request({
         headers: {
             'Authorization' : 'key='+key,
@@ -33,7 +57,7 @@ router.post('/', function(req, res, next) {
         body: JSON.stringify(messageData),
         method: 'POST'
     }, function (err, response, body) {
-        res.send("berhasil!");
+        //res.send("berhasil!");
         console.log("body "+response.body);
         console.log("response "+JSON.stringify(response.headers));
     });
@@ -44,49 +68,6 @@ router.post('/', function(req, res, next) {
 router.get('/', function(req, res, next) {
 
     console.log('GET REQUEST send');
-    /*var post_data = querystring.stringify({
-        'compilation_level' : 'ADVANCED_OPTIMIZATIONS',
-        'output_format': 'json',
-        'output_info': 'compiled_code',
-        'warning_level' : 'QUIET',
-        'js_code' : codestring
-    });
-
-    // An object of options to indicate where to post to
-    var post_options = {
-        host: 'closure-compiler.appspot.com',
-        port: '80',
-        path: '/compile',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Content-Length': Buffer.byteLength(post_data)
-        }
-    };
-
-    // Set up the request
-    var post_req = http.request(post_options, function(res) {
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            console.log('Response: ' + chunk);
-        });
-    });
-
-    // post the data
-    post_req.write(post_data);
-    post_req.end();*/
-
-    var form = {
-        username: 'usr',
-        password: 'pwd',
-        opaque: 'opaque',
-        logintype: '1'
-    };
-
-    var formData = querystring.stringify(form);
-    var contentLength = formData.length;
-
-    //console.log('key'+key);
 
     request({
         headers: {
