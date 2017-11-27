@@ -24,7 +24,7 @@ public class Order2Impl implements Order2{
       boolean hasName = false;
       try {
         // Generate the SQL query.
-        String command = "SELECT * FROM user WHERE LOWER(name) LIKE LOWER(?) AND (is_driver = ?) AND ? <> ? AND user.user_id  != ?";
+        String command = "SELECT * FROM user WHERE LOWER(name) LIKE LOWER(?) AND (is_driver = ?) AND ? <> ? AND user.user_id  != ? AND user.isFinding = ?";
         preparedStatement = databaseConnection.prepareStatement(command);
         //Making use of prepared statements here to insert bunch of data
         preparedStatement.setString(1, "%" + driverName + "%");
@@ -32,6 +32,7 @@ public class Order2Impl implements Order2{
         preparedStatement.setString(3, driverName);
         preparedStatement.setString(4, "");
         preparedStatement.setString(5, userid);
+        preparedStatement.setInt(6,1);
 
         ResultSet rs = preparedStatement.executeQuery();
 
@@ -75,6 +76,7 @@ public class Order2Impl implements Order2{
   }
 
 
+
   @Override
   public String getDriverDest(String token, String username, String destination, String userid) {
     TokenValidatorImpl tokenValidator = new TokenValidatorImpl();
@@ -90,12 +92,13 @@ public class Order2Impl implements Order2{
       try {
 
         // Generate the SQL query.
-        String command = "SELECT DISTINCT * FROM preferred_location NATURAL JOIN user  WHERE preferred_location.location = ? AND user.is_driver = ? AND user.user_id  != ? ";
+        String command = "SELECT DISTINCT * FROM preferred_location NATURAL JOIN user  WHERE preferred_location.location = ? AND user.is_driver = ? AND user.user_id  != ? AND user.isFinding = ?";
         preparedStatement = databaseConnection.prepareStatement(command);
         //Making use of prepared statements here to insert bunch of data
         preparedStatement.setString(1, destination);
         preparedStatement.setInt(2, 1);
         preparedStatement.setString(3, userid);
+        preparedStatement.setInt(4,1);
 
         ResultSet rs = preparedStatement.executeQuery();
 

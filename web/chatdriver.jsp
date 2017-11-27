@@ -7,7 +7,7 @@
 <body>
 <div class = "header">
   <div class="title">
-     <div class="bigfont">
+     <div class="bigfont"> 
         <label class= "headcolor1">PR</label><label>-</label><label class="headcolor2">OJEK</label>
      </div>
      <div>
@@ -17,7 +17,7 @@
   <div class="logininfo">
       <label class = "floatright"> Hi, <b>snorlax!</b> </label>
       <br>
-     <a class="floatright" href="../login/login.php">logout</a>
+     <a class="floatright" href="">logout</a>
   </div>
 </div>
 
@@ -29,46 +29,23 @@
 
 <div>
 
-  <div class="makeorder">MAKE AN ORDER</div>
+  <div class="title1">LOOKING FOR AN ORDER</div>
 
       <div class="steplabeltab">
-        <div class = "steplabel">
-          <div class= "steplabelnumber">
-              <label >1</label>
-          </div>
-          <div class = "steplabeltext">
-             <label >Select Destination</label>
-          </div>
+        <div class="title2">
+          Got an Order!
         </div>
-        <div class = "steplabel">
-          <div class= "steplabelnumber">
-              <label >2</label>
-          </div>
-          <div class = "steplabeltext">
-             <label >Select a Driver</label>
-          </div>
+        <div class="userojekname">
+          pikapikapikachu
         </div>
-        <div class = "steplabelopen">
-          <div class= "steplabelnumber">
-              <label >3</label>
-          </div>
-          <div class = "steplabeltext">
-             <label >Chat driver</label>
-          </div>
-        </div>
-        <div class = "steplabelright">
-          <div class= "steplabelnumber">
-              <label >4</label>
-          </div>
-          <div class = "steplabeltext">
-             <label >Complete your order</label>
-          </div>
-        </div>
-
       </div>
 
       <div ng-app="chatting" ng-controller="chatCtrl">
         <div class="chatoutput" id="scrollable">
+          <div ng-repeat="chat in history">
+            <span ng-if="(chat.from == 1) && (chat.to == 2)" class="sender">{{ chat.message }}</span>
+            <span ng-if="(chat.from == 2) && (chat.to == 1)" class="receiver">{{ chat.message }}</span>
+          </div>
           <div ng-repeat="message in messages">
             <span class="{{ message.sentAs }}">{{ message.content }}</span>
           </div>
@@ -83,7 +60,7 @@
             </div>
           </form>
         </div>
-        <a href="order3"> <button class="close" type="submit">CLOSE</button> </a>
+        <button class="close" type="submit">CLOSE</button>
 
         <hr>
         <form ng-submit="receiveChat()">
@@ -114,6 +91,17 @@
 
   var app = angular.module('chatting', []);
   app.controller('chatCtrl', function($scope, $timeout, $http){
+    
+    $http({
+        method : "GET",
+        url : "http://localhost:3000/chat/1/2"
+    }).then(function mySuccess(response) {
+        $scope.history = response.data;
+        console.log('success');
+    }, function myError(response) {
+        alert('error');
+    });
+
     $scope.messages = [];
 
     $scope.submitChat = function() {
@@ -124,16 +112,6 @@
           element.scrollTop = element.scrollHeight;
         }, 0, false);
       }
-
-      // HTTP POST REQUEST
-      $http({
-        method : "POST",
-        url : "http://127.0.0.1:3000/send"
-      }).then(function mySuccess(response) {
-        console.log("success!");
-      }, function myError(response) {
-        console.log("error!");
-      });
     }
     $scope.receiveChat = function() {
       if ($scope.textSent != "" && $scope.textSent != null && $scope.textSent != undefined) {
@@ -149,4 +127,4 @@
 </script>
 
 </body>
-</html>
+</html> 

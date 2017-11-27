@@ -30,16 +30,17 @@ router.post('/', function(req, res, next) {
 
     console.log("request POST chat");
 
-    var idFrom = 100;
-    var idTo = 200;
-    var message = "hahaha";
+    var idFrom = req.body.from;
+    var idTo = req.body.to;
+    var message = req.body.message;
+    var dateTime = req.body.dateTime;
     var error = 0;
 
     var insertChat = function(db, callback) {
         db.collection('chat').insertOne( {
             "from" : idFrom,
             "to" : idTo,
-            "dateTime" : Date.now(),
+            "dateTime" : dateTime,
             "message" : message
         }, function(err, result) {
             assert.equal(err, null);
