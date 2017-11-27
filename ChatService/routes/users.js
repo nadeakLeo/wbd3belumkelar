@@ -1,20 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var MongoClient = require('mongodb').MongoClient;
+var path = require('path');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-
-    var url = "mongodb://localhost:27017/chat2";
-
-    MongoClient.connect(url, function(err, db) {
-        if (err) throw err;
-        db.createCollection("customers", function(err, res) {
-            if (err) throw err;
-            console.log("Collection created!");
-            db.close();
-        });
-    });
+    res.sendFile(path.resolve('firebase/chatojekuser.html'));
 });
 
 module.exports = router;

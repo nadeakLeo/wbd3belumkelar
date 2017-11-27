@@ -15,3 +15,5 @@ tcp6       0      0 ::1:631                 :::*                    LISTEN      
 
 # to kill the process using the port 8080 see the process number "8868/java" then:
 sudo kill -TERM 8868
+
+gcm sender id: 978916192990
