@@ -73,6 +73,10 @@
 
       <div id="chatter" ng-app="chatting" ng-controller="chatCtrl" ng-init="temp=1">
         <div class="chatoutput" id="scrollable">
+        <div ng-repeat="chat in history">
+            <span ng-if="(chat.from == 1) && (chat.to == 2)" class="sender">{{ chat.message }}</span>
+            <span ng-if="(chat.from == 2) && (chat.to == 1)" class="receiver">{{ chat.message }}</span>
+        </div>
           <div ng-repeat="message in messages">
             <span class="{{ message.sentAs }}">{{ message.content }}</span>
           </div>
@@ -121,6 +125,17 @@
   app.controller('chatCtrl', function($scope, $timeout, $http, $location){
 
     console.log($location.search());
+
+    /* add history chat*/
+    $http({
+      method : "GET",
+      url : "http://localhost:3000/chat/1/2"
+    }).then(function mySuccess(response) {
+      $scope.history = response.data;
+      console.log('success');
+    }, function myError(response) {
+      alert('error');
+    });
 
     $scope.messages = [];
     var fromId = 100;
