@@ -6,11 +6,23 @@ var ObjectId = require('mongodb').ObjectID;
 var link = 'mongodb://localhost:27017/ojek_chat';
 
 /* GET CHAT */
-router.get('/', function(req, res, next) {
+router.get('/:sender/:receiver', function(req, res, next) {
 
-    console.log('test!');
-
-
+    MongoClient.connect(link, function(err, db) {
+        if (err) throw err;
+        var sender = parseInt(req.params.sender);
+        var receiver = parseInt(req.params.receiver);
+        //console.log(sender);
+        //console.log(receiver);
+        var query = { $or: [ {"from":sender, "to":receiver}, {"from":receiver, "to":sender} ] };
+        //console.log(query);
+        db.collection('chat').find(query).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result);
+            res.end(JSON.stringify(result));
+            db.close();
+        });
+    });
 });
 
 /* POST CHAT */

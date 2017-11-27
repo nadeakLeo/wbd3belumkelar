@@ -288,7 +288,7 @@ li.content-active {
 .step-field {
 	border: 1px solid black;
 	height: 40px;
-	width: 28%;
+	width: 20%;
 	padding: 10px 10px 10px 0px;
 	box-sizing: border-box;
 }
