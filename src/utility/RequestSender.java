@@ -5,10 +5,17 @@ import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.InetAddress;
 import java.net.URL;
+import java.net.UnknownHostException;
 
 public class RequestSender {
-    public static String sendRequest(String url, String method, String contentType, String data) {
+    public static String sendRequest(String url, String method, String contentType, String data) throws UnknownHostException {
+        //Get IP
+        InetAddress inet = InetAddress.getLocalHost();
+        String ip = inet.getHostAddress();
+
+        data = data + "&ip=" + ip;
 
         HttpURLConnection httpURLConnection;
         StringBuilder result = new StringBuilder();

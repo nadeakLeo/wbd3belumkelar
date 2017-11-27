@@ -24,6 +24,8 @@ public class SignIn extends HttpServlet {
                 errorMessage = "Invalid token, please login again";
             else if (request.getParameter("error").equals("notoken"))
                 errorMessage = "You haven't login, please input your username and password to login";
+            else if (request.getParameter("error").equals("differenttoken"))
+                errorMessage = "Someone is using your account, mampus!!";
         }
         System.out.println(errorMessage);
         request.setAttribute("errormessage", errorMessage);
