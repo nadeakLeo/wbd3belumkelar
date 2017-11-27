@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var send = require('./routes/send');
 var chat = require('./routes/chat');
+var tokenfcm = require('./routes/tokenfcm');
 
 var app = express();
 
@@ -48,6 +49,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/send',send);
 app.use('/chat',chat);
+app.use('/tokenfcm',tokenfcm);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
