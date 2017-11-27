@@ -26,9 +26,11 @@ public class Order3 extends HttpServlet {
         if (!cookiesMap.containsKey("token")) {
             response.sendRedirect("index.jsp?error=notoken");
         } else {
-            String pick = request.getParameter("pick").toString();
-            String dest = request.getParameter("dest").toString();
-            String driver_id = request.getParameter("driver_id").toString();
+
+            HttpSession session = request.getSession(true);
+            String driver_id = session.getAttribute("ordered_driver").toString();
+            String pick = session.getAttribute("ordered_pick").toString();
+            String dest = session.getAttribute("ordered_dest").toString();
 
             String token = cookiesMap.get("token");
             String username = cookiesMap.get("uname");
@@ -66,8 +68,6 @@ public class Order3 extends HttpServlet {
                 }
 
                 if (maps1.get(0).get("status").equals("valid")) {
-                    HttpSession session = request.getSession(true);
-                    session.setAttribute("driver_isFinding", "false");
                     request.setAttribute("driver_data_account", maps2.get(0));
                     request.setAttribute("pick", pick);
                     request.setAttribute("dest", dest);

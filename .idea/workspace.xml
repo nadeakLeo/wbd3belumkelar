@@ -7,20 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b62b240c-b202-4206-8114-006ffc9a15c4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/order/Order3.class" afterPath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/order/Order3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/profile/Profile.class" afterPath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/profile/Profile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SOAP/service/profile/FetchProfileImpl.class" afterPath="$PROJECT_DIR$/out/production/SOAP/service/profile/FetchProfileImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WBDRAss/servlet/order/Order3.class" afterPath="$PROJECT_DIR$/out/production/WBDRAss/servlet/order/Order3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WBDRAss/servlet/profile/Profile.class" afterPath="$PROJECT_DIR$/out/production/WBDRAss/servlet/profile/Profile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SOAP/src/service/profile/FetchProfileImpl.java" afterPath="$PROJECT_DIR$/SOAP/src/service/profile/FetchProfileImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/order.jsp" afterPath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/order.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/order3.jsp" afterPath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/order3.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/WBDRAss_war_exploded/WEB-INF/classes/servlet/order/Order3.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/order/FindOrder.java" afterPath="$PROJECT_DIR$/src/servlet/order/FindOrder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/order/Order3.java" afterPath="$PROJECT_DIR$/src/servlet/order/Order3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/profile/Profile.java" afterPath="$PROJECT_DIR$/src/servlet/profile/Profile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/order.jsp" afterPath="$PROJECT_DIR$/web/order.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/chatojekuser.jsp" afterPath="$PROJECT_DIR$/web/chatojekuser.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/findingorder.jsp" afterPath="$PROJECT_DIR$/web/findingorder.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/order2.jsp" afterPath="$PROJECT_DIR$/web/order2.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,33 +31,9 @@
       <file leaf-file-name="order3.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/order3.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="357">
               <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/order.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REST/src/identityservice/LoginService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="32" column="86" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1511526477329" expanded="true" signature="1203:1254" ph="select * fro... user" />
-                <marker date="1511526477329" expanded="true" signature="2374:2441" ph="update user " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +41,8 @@
       <file leaf-file-name="findingorder.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/findingorder.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+            <state relative-caret-position="164">
+              <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -82,9 +51,35 @@
       <file leaf-file-name="FindOrder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlet/order/FindOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="45" column="60" lean-forward="true" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
+            <state relative-caret-position="-204">
+              <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="42" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1511787211877" expanded="true" signature="1573:1619" ph="update user " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chatojekuser.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/chatojekuser.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="78" column="18" lean-forward="true" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="isOrdered.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/order/isOrdered.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1511792611704" expanded="true" signature="1409:1464" ph="select isFin... user" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,8 +87,34 @@
       <file leaf-file-name="order2.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/order2.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="74" column="95" lean-forward="true" selection-start-line="74" selection-start-column="95" selection-end-line="74" selection-end-column="95" />
+            <state relative-caret-position="-799">
+              <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+              <folding>
+                <marker date="1511787656510" expanded="false" signature="2682:2713" ph="data:" />
+                <marker date="1511787656510" expanded="false" signature="4124:4155" ph="data:" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatDriver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/order/ChatDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding>
+                <marker date="1511789120247" expanded="true" signature="1638:1683" ph="update user " />
+                <marker date="1511789120247" expanded="true" signature="1638:1684" ph="update user " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -102,41 +123,18 @@
       <file leaf-file-name="Order3.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlet/order/Order3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="77" column="70" lean-forward="true" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+            <state relative-caret-position="204">
+              <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Profile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/profile/Profile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="68" column="17" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="68" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FetchProfileImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SOAP/src/service/profile/FetchProfileImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="46" column="108" lean-forward="false" selection-start-line="46" selection-start-column="108" selection-end-line="46" selection-end-column="108" />
-              <folding>
-                <marker date="1511785714984" expanded="true" signature="919:955" ph="select * fro... user" />
-                <marker date="1511785714984" expanded="true" signature="3342:3392" ph="select * fro... preferred_location" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="DatabaseConnector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SOAP/src/utility/DatabaseConnector.java">
+        <entry file="file://$PROJECT_DIR$/REST/src/utility/DatabaseConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="9" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="15" selection-end-column="9" />
+            <state relative-caret-position="187">
+              <caret line="12" column="66" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="12" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -169,10 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/orderhistory.jsp" />
-        <option value="$PROJECT_DIR$/web/profile.jsp" />
-        <option value="$PROJECT_DIR$/web/register.jsp" />
-        <option value="$PROJECT_DIR$/REST/src/identityservice/LogoutService.java" />
         <option value="$PROJECT_DIR$/REST/src/identityservice/TokenValidator.java" />
         <option value="$PROJECT_DIR$/REST/src/identityservice/UsernameService.java" />
         <option value="$PROJECT_DIR$/SOAP/src/service/history/HistoryImpl.java" />
@@ -212,14 +206,18 @@
         <option value="$PROJECT_DIR$/src/servlet/order/OrderDriver1.java" />
         <option value="$PROJECT_DIR$/src/servlet/profile/Profile_isDriver.java" />
         <option value="$PROJECT_DIR$/web/navbar.jsp" />
-        <option value="$PROJECT_DIR$/web/order.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/servlet/profile/Profile.java" />
-        <option value="$PROJECT_DIR$/src/servlet/order/Order3.java" />
         <option value="$PROJECT_DIR$/SOAP/src/service/profile/FetchProfileImpl.java" />
-        <option value="$PROJECT_DIR$/src/servlet/order/FindOrder.java" />
-        <option value="$PROJECT_DIR$/web/findingorder.jsp" />
         <option value="$PROJECT_DIR$/web/order3.jsp" />
+        <option value="$PROJECT_DIR$/web/order.jsp" />
+        <option value="$PROJECT_DIR$/src/servlet/order/FindOrder.java" />
+        <option value="$PROJECT_DIR$/web/order2.jsp" />
+        <option value="$PROJECT_DIR$/web/chatojekuser.jsp" />
+        <option value="$PROJECT_DIR$/src/servlet/order/ChatDriver.java" />
+        <option value="$PROJECT_DIR$/src/servlet/order/Order3.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/servlet/order/isOrdered.java" />
+        <option value="$PROJECT_DIR$/web/findingorder.jsp" />
       </list>
     </option>
   </component>
@@ -771,12 +769,12 @@
       <workItem from="1511617183496" duration="2218000" />
       <workItem from="1511672045442" duration="239000" />
       <workItem from="1511691467878" duration="596000" />
-      <workItem from="1511776735889" duration="9225000" />
+      <workItem from="1511776735889" duration="14417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48437000" />
+    <option name="totallyTimeSpent" value="53629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -835,27 +833,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/service/register/RegisterUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/session/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REST/src/identityservice/RegisterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/session/SignUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1010,14 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/REST/src/utility/DatabaseConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="66" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="12" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/order/Order2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1114,14 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utility/RequestSender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68">
@@ -1149,7 +1110,7 @@
     <entry file="file://$PROJECT_DIR$/SOAP/src/utility/DatabaseConnector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="15" selection-end-column="9" />
+          <caret line="15" column="9" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1180,55 +1141,107 @@
     <entry file="file://$PROJECT_DIR$/src/servlet/profile/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
-          <caret line="68" column="17" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="68" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/order2.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="74" column="95" lean-forward="true" selection-start-line="74" selection-start-column="95" selection-end-line="74" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/order/Order3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="77" column="70" lean-forward="true" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/order/FindOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="45" column="60" lean-forward="true" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/findingorder.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/order3.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <caret line="68" column="17" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="68" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/order.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        <state relative-caret-position="476">
+          <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/REST/src/utility/DatabaseConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="66" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="12" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/order2.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-799">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding>
+            <marker date="1511787656510" expanded="false" signature="2682:2713" ph="data:" />
+            <marker date="1511787656510" expanded="false" signature="4124:4155" ph="data:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/order3.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/order/Order3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/order/ChatDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <marker date="1511789120247" expanded="true" signature="1638:1683" ph="update user " />
+            <marker date="1511789120247" expanded="true" signature="1638:1684" ph="update user " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/order/isOrdered.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1511792611704" expanded="true" signature="1409:1464" ph="select isFin... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/order/FindOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="42" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1511787211877" expanded="true" signature="1573:1619" ph="update user " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/findingorder.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/chatojekuser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" column="18" lean-forward="true" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
           <folding />
         </state>
       </provider>

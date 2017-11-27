@@ -75,7 +75,7 @@
                     <img src="img/star.png" class="small-icon">
                     <span class="color-rating"><%=(double) Math.round(Float.parseFloat(pref_driver.get("rating")) * 10) / 10%></span> (<%=pref_driver.get("votes")%> votes)
                 </div>
-                <form method="get" action="order3">
+                <form method="get" action="chatdriver">
                     <input type="hidden" name="pick" value="<%=request.getParameter("pick")%>">
                     <input type="hidden" name="dest" value="<%=request.getParameter("dest")%>">
                     <button class="pos-choose-button green-button" name="driver_id" type="submit" value="<%=pref_driver.get("user_id")%>">I CHOOSE YOU!</button>

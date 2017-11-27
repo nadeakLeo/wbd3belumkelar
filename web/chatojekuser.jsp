@@ -66,7 +66,6 @@
         </div>
 
       </div>
-
       <div ng-app="chatting" ng-controller="chatCtrl">
         <div class="chatoutput" id="scrollable">
           <div ng-repeat="message in messages">
@@ -83,7 +82,7 @@
             </div>
           </form>
         </div>
-        <button class="close" type="submit">CLOSE</button>
+        <a href="order3"> <button class="close" type="submit">CLOSE</button> </a>
 
         <hr>
         <form ng-submit="receiveChat()">

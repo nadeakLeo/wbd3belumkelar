@@ -1,5 +1,4 @@
 <%@ page import="utility.CookieChecker" %>
-<%@ page import="java.util.Map" %>
 <%--
   Created by IntelliJ IDEA.
   User: ASUS ROG
@@ -14,6 +13,7 @@
     } else {
 %>
 <!DOCTYPE html>
+<META http-equiv="refresh" content="1;URL=/isOrdered">
 <html>
 <head>
     <title>Finding your Order</title>
@@ -25,17 +25,7 @@
     <%@ include file = "navbar.jsp" %>
     <script src="js/master.js"></script>
     <script type="text/javascript">chooseNavbar(0);</script>
-    <%
-        if (session.getAttribute("driver_isFinding").equals("true")) {
-            %>
-            Finding Your Order ....
-    <%
-        } else {
-            %>
-            Chatbox...
-    <%
-        }
-    %>
+    Finding Your Order ....
 
 </div>
 </body>

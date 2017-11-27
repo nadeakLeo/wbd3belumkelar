@@ -1,5 +1,4 @@
 <%@ page import="utility.CookieChecker" %>
-<%@ page import="java.util.Map" %>
 <%--
   Created by IntelliJ IDEA.
   User: ASUS ROG
@@ -14,6 +13,7 @@
     } else {
 %>
 <!DOCTYPE html>
+<META http-equiv="refresh" content="1;URL=/isOrdered">
 <html>
 <head>
     <title>Finding your Order</title>
@@ -26,6 +26,7 @@
     <script src="js/master.js"></script>
     <script type="text/javascript">chooseNavbar(0);</script>
     Finding Your Order ....
+
 </div>
 </body>
 <script src="js/master.js"></script>

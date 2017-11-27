@@ -9,6 +9,15 @@
     Tugas 2 Web Based Development
 </description>
     <servlet>
+        <servlet-name>isOrdered</servlet-name>
+        <servlet-class>servlet.order.isOrdered</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>isOrdered</servlet-name>
+        <url-pattern>/isOrdered</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>FindOrder</servlet-name>
         <servlet-class>servlet.order.FindOrder</servlet-class>
     </servlet>
@@ -16,6 +25,16 @@
         <servlet-name>FindOrder</servlet-name>
         <url-pattern>/findorder</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChatDriver</servlet-name>
+        <servlet-class>servlet.order.ChatDriver</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChatDriver</servlet-name>
+        <url-pattern>/chatdriver</url-pattern>
+    </servlet-mapping>
+
 <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>servlet.session.Login</servlet-class>
