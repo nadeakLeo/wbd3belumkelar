@@ -39,9 +39,12 @@ public class FetchProfileImpl implements FetchProfile{
           String votes = result.getString("votes");
           String email = result.getString("email");
           String phone = result.getString("phone");
+          String isFinding = result.getString("isFinding").equals("1") ? "true" : "false";
+          String isComplete = result.getString("isComplete").equals("1") ? "true" : "false";
           byte[] profilePictureBlob = result.getBytes("profile_picture");
           String profilePicture = Base64.encodeBase64String(profilePictureBlob);
-          String profileString = String.format("status=%s&name=%s&is_driver=%s&rating=%s&votes=%s&email=%s&phone=%s&profile_picture=%s", status, name, isDriver, rating, votes, email, phone, profilePicture);
+          String profileString = String.format("status=%s&name=%s&is_driver=%s&rating=%s&votes=%s&email=%s&phone=%s&profile_picture=%s&isFinding=%s&isComplete=%s",
+                  status, name, isDriver, rating, votes, email, phone, profilePicture, isFinding, isComplete);
           return profileString;
         } else {
           // failure at query execution

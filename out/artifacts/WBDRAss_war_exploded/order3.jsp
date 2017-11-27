@@ -28,6 +28,7 @@
     <link rel="icon" href="img/blackjek.png">
 </head>
 <body>
+<%=session.getAttribute("driver_isFinding")%>
 <div class="order">
     <%@ include file = "navbar.jsp" %>
     <script src="js/master.js"></script>

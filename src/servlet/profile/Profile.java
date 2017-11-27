@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,8 +52,10 @@ public class Profile extends HttpServlet {
 
                 request.setAttribute("user_profile", maps.get(0));
                 request.setAttribute("username", username);
-
+                HttpSession session = request.getSession(true);
                 if (maps.get(0).get("is_driver").equals("true")) {
+                    session.setAttribute("is_driver", "true");
+                    session.setAttribute("driver_isFinding", "true");
                     String locationReply = fetchProfile.getLocation(token, username, userId);
                     List<Map<String, String>> locationMaps = StringMapper.toMapArray(locationReply);
                     if (locationMaps.get(0).containsKey("location")) {
@@ -61,6 +64,8 @@ public class Profile extends HttpServlet {
                         locationMaps = new ArrayList<>();
                         request.setAttribute("locations", locationMaps);
                     }
+                } else {
+                    session.setAttribute("is_driver", "false");
                 }
                 request.getRequestDispatcher("/profile.jsp").forward(request, response);
             } else

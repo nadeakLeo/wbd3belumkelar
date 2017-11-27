@@ -1,4 +1,5 @@
 <%@ page import="utility.CookieChecker" %>
+<%@ page import="java.util.Map" %>
 <%--
   Created by IntelliJ IDEA.
   User: ASUS ROG
@@ -24,6 +25,9 @@
     <%@ include file = "navbar.jsp" %>
     <script src="js/master.js"></script>
     <script type="text/javascript">chooseNavbar(0);</script>
+<%
+    if (session.getAttribute("is_driver").equals("false")) {
+%>
     <div class="order-title">
         <div class="font-bebas">
             <h1>Make an order</h1>
@@ -67,6 +71,13 @@
         </form>
     </div>
 </div>
+<%
+    } else {
+        %>
+    <a href="findorder">Find Order</a>
+<%
+    }
+%>
 </body>
 <script src="js/master.js"></script>
 </html>

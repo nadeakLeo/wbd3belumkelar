@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -65,6 +66,8 @@ public class Order3 extends HttpServlet {
                 }
 
                 if (maps1.get(0).get("status").equals("valid")) {
+                    HttpSession session = request.getSession(true);
+                    session.setAttribute("driver_isFinding", "false");
                     request.setAttribute("driver_data_account", maps2.get(0));
                     request.setAttribute("pick", pick);
                     request.setAttribute("dest", dest);
