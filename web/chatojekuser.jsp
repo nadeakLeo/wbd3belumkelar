@@ -23,12 +23,12 @@
 <html>
 <head>
     <title>Make A Order</title>
-    <link rel="stylesheet" type="text/css" href="makeorder.css">
+    <link rel="stylesheet" type="text/css" href="css/makeorder.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <script src="./firebase.js"></script>
+    <!--<script src="./firebase.js"></script>-->
 </head>
 <body>
 <div class = "header">
