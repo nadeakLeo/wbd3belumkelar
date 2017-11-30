@@ -22,6 +22,7 @@ messaging.requestPermission()
 messaging.getToken()
 .then(function(currentToken) {
   if (currentToken) {
+    console.log("Token ini:");
     console.log(currentToken);
     /*sendTokenToServer(currentToken);
     updateUIForPushEnabled(currentToken);*/
@@ -62,8 +63,12 @@ messaging.onTokenRefresh(function() {
 // - the user clicks on an app notification created by a sevice worker
 //   `messaging.setBackgroundMessageHandler` handler.
 messaging.onMessage(function(payload) {
-  console.log("test!");
-  console.log("Message received. ", payload);
+  console.log("Message received. ", payload.data.message);
+  var scope = angular.element(document.getElementById("chatter")).scope();
+    scope.$apply(function(){
+        scope.messages.push({sentAs: 'receiver', content: payload.data.message});
+    });
+  //console.log("Message received. ", payload);
   // [START_EXCLUDE]
   // Update the UI to include the received message.
   // [END_EXCLUDE]

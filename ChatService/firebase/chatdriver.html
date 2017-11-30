@@ -1,0 +1,183 @@
+
+<html>
+<head>
+    <title>Make A Order</title>
+    <link rel="stylesheet" type="text/css" href="makeorder.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script src="./firebase.js"></script>
+</head>
+<body>
+<div class = "header">
+    <div class="title">
+        <div class="bigfont">
+            <label class= "headcolor1">PR</label><label>-</label><label class="headcolor2">OJEK</label>
+        </div>
+        <div>
+            <label class = "wushwush">wushh...wushh...ngeeeng</label>
+        </div>
+    </div>
+    <div class="logininfo">
+        <label class = "floatright"> Hi, <b>MIco!</b> </label>
+        <br>
+        <a class="floatright" href="/logout">logout</a>
+    </div>
+</div>
+
+<div class="tab">
+    <a class="tablinks active" href="order1">ORDER</a>
+    <a class="tablinks" href="previousorder">HISTORY</a>
+    <a class="tablinks" href="profile">MY PROFILE</a>
+</div>
+
+<div>
+
+    <div class="title1">LOOKING FOR AN ORDER</div>
+
+    <div class="steplabeltab">
+        <div class="title2">
+            Got an Order!
+        </div>
+        <div class="userojekname">
+            aaaaaaaa
+        </div>
+    </div>
+
+    <div id="chatter" ng-app="chatting" ng-controller="chatCtrl" ng-init="temp=1">
+        <div class="chatoutput" id="scrollable">
+            <div ng-repeat="chat in history">
+                <span ng-if="(chat.from == 6) && (chat.to == 7)" class="sender">{{ chat.message }}</span>
+                <span ng-if="(chat.from == 7) && (chat.to == 6)" class="receiver">{{ chat.message }}</span>
+            </div>
+            <div ng-repeat="message in messages">
+                <span class="{{ message.sentAs }}">{{ message.content }}</span>
+            </div>
+        </div>
+        <div class="chatinput">
+            <form ng-submit="submitChat()">
+                <div class="inputarea">
+                    <input type="text" name="chat" placeholder="Say something..." ng-model="textSent">
+                </div>
+                <div class="send">
+                    <button class="sendbutton" type="submit">Kirim</button>
+                </div>
+            </form>
+        </div>
+        <a class="close" href="/order3">CLOSE</a>
+
+        <hr>
+        <form ng-submit="receiveChat()">
+            <input type="text" name="chatRcv" ng-model="textReceived"> <button type="submit">SEND</button>
+        </form>
+    </div>
+
+</div>
+
+<script>
+
+    function validateForm() {
+        var x = document.forms["pickdest"]["pickpoint"].value;
+        var y = document.forms["pickdest"]["dest"].value;
+
+        if (x == "") {
+            alert("Picking Point must be filled out");
+            return false;
+        } else
+        if (y == "") {
+            alert("Destination must be filled out");
+            return false;
+        }
+    }
+
+    function resetForm(element) {
+        element.reset();
+    }
+
+    var app = angular.module('chatting', []);
+    app.controller('chatCtrl', function($scope, $timeout, $http, $location){
+
+        console.log($location.search());
+
+        /* add history chat*/
+        $http({
+            method : "GET",
+            url : "http://localhost:3000/chat/" + 6 + "/" + 7
+        }).then(function mySuccess(response) {
+            $scope.history = response.data;
+            console.log('success');
+        }, function myError(response) {
+            alert('error');
+        });
+
+        $scope.messages = [];
+        var fromId = 100;
+        var toId = 200;
+        var tokenDest = "";
+
+        tokenDest = "dwt7kqDt148:APA91bEKR1UnIo_Qr6VOqe9hrBSCksEETBaopr5sggBCqmznHwgQaHkBKzFYkhs7wknMC8O2yZqIA9u072_i57FuHdgVQa2J2-GsNU_4t2zzI4oJ-Ihvi1nCqWxhCUOMLpBrezAuAjca";
+
+        console.log("tokenDest");
+        console.log(tokenDest);
+
+        $scope.submitChat = function() {
+            if ($scope.textSent != "" && $scope.textSent != null && $scope.textSent != undefined) {
+                $scope.messages.push({sentAs: 'sender', content: $scope.textSent});
+                $timeout(function() {
+                    var element = document.getElementById("scrollable");
+                    element.scrollTop = element.scrollHeight;
+                }, 0, false);
+            }
+
+            var dataRawChat = {
+                from: fromId,
+                to: toId,
+                tokenDest: tokenDest,
+                message: $scope.textSent,
+                date: Date.now().toString(),
+            };
+
+            var dataChat = JSON.stringify(dataRawChat);
+
+            // HTTP POST REQUEST MENAMBAHKAN CHAT KE DATABASE
+            $http({
+                method : "POST",
+                url : "http://127.0.0.1:3000/chat",
+                data: dataChat
+            }).then(function mySuccess(response) {
+                console.log("success!");
+                console.log("Respon: "+response.body);
+            }, function myError(response) {
+                console.log("error!");
+                console.log("Header: "+JSON.stringify(response.headers));
+            });
+
+            // HTTP POST REQUEST MENGIRIM CHAT
+            $http({
+                method : "POST",
+                url : "http://127.0.0.1:3000/send",
+                data: dataChat
+            }).then(function mySuccess(response) {
+                console.log("success!");
+            }, function myError(response) {
+                console.log("error!");
+                console.log("Header: "+JSON.stringify(response.headers));
+            });
+        }
+        $scope.receiveChat = function() {
+            if ($scope.textSent != "" && $scope.textSent != null && $scope.textSent != undefined) {
+                console.log("tes!");
+                $scope.messages.push({sentAs: 'receiver', content: $scope.textReceived});
+                $timeout(function() {
+                    var element = document.getElementById("scrollable");
+                    element.scrollTop = element.scrollHeight;
+                }, 0, false);
+            }
+        }
+
+    });
+</script>
+
+</body>
+</html>

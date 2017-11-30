@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var driver = require('./routes/driver');
 var send = require('./routes/send');
 var chat = require('./routes/chat');
 var tokenfcm = require('./routes/tokenfcm');
@@ -47,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/drivers', driver);
 app.use('/send',send);
 app.use('/chat',chat);
 app.use('/tokenfcm',tokenfcm);
