@@ -26,9 +26,11 @@
 <head>
     <title>Select driver</title>
     <link rel="stylesheet" type="text/css" href="css/master.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-cookies.js"></script>
     <link rel="icon" href="img/blackjek.png">
 </head>
-<body>
+<body ng-app="order" ng-controller="orderCtrl">
 <div class="order">
     <%@ include file = "navbar.jsp" %>
     <script src="js/master.js"></script>
@@ -110,6 +112,10 @@
                     <input type="hidden" name="pick" value="<%=request.getParameter("pick")%>">
                     <input type="hidden" name="dest" value="<%=request.getParameter("dest")%>">
                     <button class="pos-choose-button green-button" name="driver_id" type="submit" value="<%=dest_driver.get("user_id")%>">I CHOOSE YOU!</button>
+
+                    <input type="hidden" value="<%=username%>" ng-model="username">
+                    <input type="hidden" value="<%=id%>" ng-model="id">
+                    <input type="hidden" value="<%=driver_id%>" ng-model="driver_id">
                 </form>
             </div>
             <% }
@@ -117,5 +123,13 @@
         </div>
     </div>
 </div>
+<script>
+    var app = angular.module('order', ['ngCookies']);
+    app.controller('orderCtrl', function($scope, $cookies){
+        $cookies.username = $scope.username;
+        $cookies.id = $scope.id;
+        $cookies.driver_id = $scope.driver_id;
+    });
+</script>
 </body>
 </html>

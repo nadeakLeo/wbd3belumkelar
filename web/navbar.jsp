@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String username = "";
+    int id;
+    int driver_id;
     Cookie[] cookies = null;
     cookies = request.getCookies();
     if (cookies != null) {
@@ -16,6 +18,12 @@
             String cookieValue = cooky.getValue();
             if (cookieName.equals("uname")) {
                 username = cookieValue;
+            }
+            if (cookieName.equals("id")) {
+                id = Integer.parseInt(cookieValue);
+            }
+            if (cookieName.equals("driver_id")) {
+                driver_id = Integer.parseInt(cookieValue);
             }
         }
     }
