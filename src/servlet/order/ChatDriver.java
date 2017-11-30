@@ -5,10 +5,7 @@ import com.mysql.jdbc.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.DriverManager;
 
@@ -20,6 +17,9 @@ public class ChatDriver extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String driver_id = request.getParameter("driver_id");
+        Cookie cookie = new Cookie("driver_id", driver_id);
+        cookie.setMaxAge(60*60); //1 hour
+        response.addCookie(cookie);
         String pick = request.getParameter("pick");
         String dest = request.getParameter("dest");
         Connection conn = null;
@@ -46,7 +46,8 @@ public class ChatDriver extends HttpServlet {
         session.setAttribute("ordered_driver", driver_id);
         session.setAttribute("ordered_pick", pick);
         session.setAttribute("ordered_dest", dest);
-        request.getRequestDispatcher("/chatojekuser.jsp").forward(request, response);
+//        request.getRequestDispatcher("/chatojekuser.jsp").forward(request, response);
 
+        response.sendRedirect("http://localhost:3000/users");
     }
 }

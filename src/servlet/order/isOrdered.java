@@ -45,7 +45,7 @@ public class isOrdered extends HttpServlet {
 //                out.println("Still Finding");
             } else {
                 //ganti ama chatbox driver
-                out.println("Chatbox");
+                response.sendRedirect("http://localhost:3000/drivers");
             }
             stmt.close();
             conn.close();

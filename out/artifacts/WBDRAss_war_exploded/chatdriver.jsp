@@ -17,8 +17,9 @@
         }
     }
 
-    int user_id = 1;
-    int driver_id = 2;
+    int user_id = 2;
+    int customer_id = 1;
+    String customer_name = "pikachu";
 %>
 <html>
 <head>
@@ -55,49 +56,22 @@
 
 <div>
 
-    <div class="makeorder">MAKE AN ORDER</div>
+    <div class="title1">LOOKING FOR AN ORDER</div>
 
     <div class="steplabeltab">
-        <div class = "steplabel">
-            <div class= "steplabelnumber">
-                <label >1</label>
-            </div>
-            <div class = "steplabeltext">
-                <label >Select Destination</label>
-            </div>
+        <div class="title2">
+            Got an Order!
         </div>
-        <div class = "steplabel">
-            <div class= "steplabelnumber">
-                <label >2</label>
-            </div>
-            <div class = "steplabeltext">
-                <label >Select a Driver</label>
-            </div>
+        <div class="userojekname">
+            <%=customer_name%>
         </div>
-        <div class = "steplabelopen">
-            <div class= "steplabelnumber">
-                <label >3</label>
-            </div>
-            <div class = "steplabeltext">
-                <label >Chat driver</label>
-            </div>
-        </div>
-        <div class = "steplabelright">
-            <div class= "steplabelnumber">
-                <label >4</label>
-            </div>
-            <div class = "steplabeltext">
-                <label >Complete your order</label>
-            </div>
-        </div>
-
     </div>
 
     <div id="chatter" ng-app="chatting" ng-controller="chatCtrl" ng-init="temp=1">
         <div class="chatoutput" id="scrollable">
             <div ng-repeat="chat in history">
-                <span ng-if="(chat.from == <%=user_id%>) && (chat.to == <%=driver_id%>)" class="sender">{{ chat.message }}</span>
-                <span ng-if="(chat.from == <%=driver_id%>) && (chat.to == <%=user_id%>)" class="receiver">{{ chat.message }}</span>
+                <span ng-if="(chat.from == <%=user_id%>) && (chat.to == <%=customer_id%>)" class="sender">{{ chat.message }}</span>
+                <span ng-if="(chat.from == <%=customer_id%>) && (chat.to == <%=user_id%>)" class="receiver">{{ chat.message }}</span>
             </div>
             <div ng-repeat="message in messages">
                 <span class="{{ message.sentAs }}">{{ message.content }}</span>
@@ -151,7 +125,7 @@
         /* add history chat*/
         $http({
             method : "GET",
-            url : "http://localhost:3000/chat/" + <%=user_id%> + "/" + <%=driver_id%>
+            url : "http://localhost:3000/chat/" + <%=user_id%> + "/" + <%=customer_id%>
         }).then(function mySuccess(response) {
             $scope.history = response.data;
             console.log('success');
