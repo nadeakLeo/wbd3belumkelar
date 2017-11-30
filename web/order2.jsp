@@ -111,11 +111,10 @@
 
                     <input type="hidden" name="pick" value="<%=request.getParameter("pick")%>">
                     <input type="hidden" name="dest" value="<%=request.getParameter("dest")%>">
-                    <button class="pos-choose-button green-button" name="driver_id" type="submit" value="<%=dest_driver.get("user_id")%>">I CHOOSE YOU!</button>
+                    <button ng-model="driver_id" class="pos-choose-button green-button" name="driver_id" type="submit" value="<%=dest_driver.get("user_id")%>">I CHOOSE YOU!</button>
 
                     <input type="hidden" value="<%=username%>" ng-model="username">
                     <input type="hidden" value="<%=id%>" ng-model="id">
-                    <input type="hidden" value="<%=driver_id%>" ng-model="driver_id">
                 </form>
             </div>
             <% }
