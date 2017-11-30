@@ -20,7 +20,7 @@
      </div>
   </div>
   <div class="logininfo">
-      <label class = "floatright"> Hi, <b{{ username }}x!</b> </label>
+      <label class = "floatright"> Hi, <b{{ $cookies.uname }}x!</b> </label>
       <br>
      <a class="floatright" href="http://localhost:8085/logout">logout</a>
   </div>
@@ -75,8 +75,8 @@
       <div id="chatter">
         <div class="chatoutput" id="scrollable">
         <div ng-repeat="chat in history">
-            <span ng-if="(chat.from == {{ sender_id }}) && (chat.to == {{ receiver_id }})" class="sender">{{ chat.message }}</span>
-            <span ng-if="(chat.from == {{ receiver_id }}) && (chat.to == {{ sender_id }})" class="receiver">{{ chat.message }}</span>
+            <span ng-if="(chat.from == {{ $cookies.id }}) && (chat.to == {{ $cookies.driver_id }})" class="sender">{{ chat.message }}</span>
+            <span ng-if="(chat.from == {{ $cookies.driver_id }}) && (chat.to == {{ $cookies.id }})" class="receiver">{{ chat.message }}</span>
         </div>
           <div ng-repeat="message in messages">
             <span class="{{ message.sentAs }}">{{ message.content }}</span>
@@ -126,11 +126,11 @@
   app.controller('chatCtrl', function($scope, $timeout, $http, $location, $cookies){
 
     console.log($location.search());
-    $cookies.driver = 6;
-    $cookies.consumer = 7;
+    //$cookies.driver = 6;
+    //$cookies.consumer = 7;
 
-    $scope.sender_id = $cookies.consumer;
-    $scope.receiver_id = $cookies.driver;
+    $scope.sender_id = $cookies.id;
+    $scope.receiver_id = $cookies.user_id;
 
     console.log("sender:" + $scope.sender_id + ", receiver:" + $scope.receiver_id);
 
