@@ -3,12 +3,13 @@
     <title>Make A Order</title>
     <link rel="stylesheet" type="text/css" href="makeorder.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-cookies.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <script src="./firebase.js"></script>
 </head>
-<body>
+<body ng-app="chatting" ng-controller="chatCtrl" >
 <div class = "header">
   <div class="title">
      <div class="bigfont">
@@ -19,16 +20,16 @@
      </div>
   </div>
   <div class="logininfo">
-      <label class = "floatright"> Hi, <b>snorlax!</b> </label>
+      <label class = "floatright"> Hi, <b{{ username }}x!</b> </label>
       <br>
-     <a class="floatright" href="../login/login.php">logout</a>
+     <a class="floatright" href="http://localhost:8085/logout">logout</a>
   </div>
 </div>
 
 <div class="tab">
-  <button class="tablinks active" onclick="">ORDER</button>
-  <button class="tablinks" onclick="">HISTORY</button>
-  <button class="tablinks" onclick="">MY PROFILE</button>
+  <button class="tablinks active" onclick="location.href='http://localhost:8085/order1'">ORDER</button>
+  <button class="tablinks" onclick="location.href='http://localhost:8085/previousorder">HISTORY</button>
+  <button class="tablinks" onclick="location.href='http://localhost:8085/profile">MY PROFILE</button>
 </div>
 
 <div>
@@ -71,11 +72,11 @@
 
       </div>
 
-      <div id="chatter" ng-app="chatting" ng-controller="chatCtrl" ng-init="temp=1">
+      <div id="chatter">
         <div class="chatoutput" id="scrollable">
         <div ng-repeat="chat in history">
-            <span ng-if="(chat.from == 7) && (chat.to == 6)" class="sender">{{ chat.message }}</span>
-            <span ng-if="(chat.from == 6) && (chat.to == 7)" class="receiver">{{ chat.message }}</span>
+            <span ng-if="(chat.from == {{ sender_id }}) && (chat.to == {{ receiver_id }})" class="sender">{{ chat.message }}</span>
+            <span ng-if="(chat.from == {{ receiver_id }}) && (chat.to == {{ sender_id }})" class="receiver">{{ chat.message }}</span>
         </div>
           <div ng-repeat="message in messages">
             <span class="{{ message.sentAs }}">{{ message.content }}</span>
@@ -93,10 +94,10 @@
         </div>
         <a class="close" href="http://localhost:8085/order3">CLOSE</a>
 
-        <hr>
+        <!--<hr>
         <form ng-submit="receiveChat()">
           <input type="text" name="chatRcv" ng-model="textReceived"> <button type="submit">SEND</button>
-        </form>
+        </form>-->
       </div>
 
 </div>
@@ -121,15 +122,22 @@
     element.reset();
   }
 
-  var app = angular.module('chatting', []);
-  app.controller('chatCtrl', function($scope, $timeout, $http, $location){
+  var app = angular.module('chatting', ['ngCookies']);
+  app.controller('chatCtrl', function($scope, $timeout, $http, $location, $cookies){
 
     console.log($location.search());
+    $cookies.driver = 6;
+    $cookies.consumer = 7;
+
+    $scope.sender_id = $cookies.consumer;
+    $scope.receiver_id = $cookies.driver;
+
+    console.log("sender:" + $scope.sender_id + ", receiver:" + $scope.receiver_id);
 
     /* add history chat*/
     $http({
       method : "GET",
-      url : "http://localhost:3000/chat/7/6"
+      url : "http://localhost:3000/chat/" + $scope.sender_id + "/" + $scope.receiver_id
     }).then(function mySuccess(response) {
       $scope.history = response.data;
       console.log('success');
@@ -138,11 +146,11 @@
     });
 
     $scope.messages = [];
-    var fromId = 100;
-    var toId = 200;
+    //var fromId = $scope.sender_id;
+    //var toId = $scope.receiver_id;
     var tokenDest = "";
 
-    tokenDest = "ffKtduPWnGQ:APA91bHG_9t8WyQTOMzkfK6RNjG3dTojCPk9mXZybPIEpm8sUHyHquE0wEHZhxwhtGU4gMPyGxe4Qho0Hy0QpFkGVdYAJfKHVgcIKpRdfnvwcV3iDVnxfG04x_ps5NFVbSND2Dn9ecdK";
+    tokenDest = "ecZfNj1IP2Q:APA91bHX4i75U9tbHPzLPKENvB4BLovRTSA4XLJLK9b_2QyyjQhmbhXhA-0muUbqOI2BPQIhQgsoOBZmzpCxy89zYcMJr6aWXdjQ251qlvJLpZt01HkgnNPVX_BOXofzchDV1YHWV6Zt";
 
     console.log("tokenDest");
     console.log(tokenDest);
@@ -157,8 +165,8 @@
       }
 
       var dataRawChat = {
-        from: fromId,
-        to: toId,
+        from: $scope.sender_id,
+        to: $scope.receiver_id,
         tokenDest: tokenDest,
         message: $scope.textSent,
         date: Date.now().toString(),
@@ -195,9 +203,9 @@
       if ($scope.textSent != "" && $scope.textSent != null && $scope.textSent != undefined) {
           console.log("tes!");
         $scope.messages.push({sentAs: 'receiver', content: $scope.textReceived});
-          tokenDest = "cIGQhBnoD4U:APA91bFeDZNrCavASOLGzDq7uI9UNCUs6S1KeP3XdszFsgxyjHa9NS0nsE4vKXYJTwavMt8OYCe5fkVL9i9zIlZ8KqSOncgB3Qr8EfLNrYrbqnb6DmJLz-m-bRSPU8DoK-SOE7brkRyq";
-          console.log("tokenDest");
-          console.log(tokenDest);
+          //tokenDest = "ecZfNj1IP2Q:APA91bHX4i75U9tbHPzLPKENvB4BLovRTSA4XLJLK9b_2QyyjQhmbhXhA-0muUbqOI2BPQIhQgsoOBZmzpCxy89zYcMJr6aWXdjQ251qlvJLpZt01HkgnNPVX_BOXofzchDV1YHWV6Zt";
+          //console.log("tokenDest");
+          //console.log(tokenDest);
         $timeout(function() {
           var element = document.getElementById("scrollable");
           element.scrollTop = element.scrollHeight;
